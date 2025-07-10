@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Neo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="floating-particles"></div>
+    
+    <div class="game-container">
+        <div class="game-header">
+            <div class="title-section">
+                <h1 class="game-title">
+                    <span class="title-icon">⚡</span>
+                    <span class="title-text">WHACK-A-MOLE</span>
+                    <span class="title-subtitle">NEO</span>
+                </h1>
+                <div class="title-glow"></div>
+            </div>
+            
+            <div class="stats-dashboard">
+                <div class="stat-card score-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Score</div>
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-progress"><div class="progress-fill"></div></div>
+                    </div>
+                </div>
+                <div class="stat-card time-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Time</div>
+                        <div class="stat-value" id="timer">60</div>
+                        <div class="time-progress"><div class="time-fill" id="timeFill"></div></div>
+                    </div>
+                </div>
+                <div class="stat-card combo-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Combo</div>
+                        <div class="stat-value" id="combo">0</div>
+                        <div class="combo-streak" id="comboStreak"></div>
+                    </div>
+                </div>
+                <div class="stat-card level-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Level</div>
+                        <div class="stat-value" id="level">1</div>
+                        <div class="level-progress"><div class="level-fill"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="difficulty-panel">
+                <div class="difficulty-label">Difficulty Mode</div>
+                <div class="difficulty-selector">
+                    <button class="difficulty-btn active" data-difficulty="easy">
+                        <span class="diff-icon">🟢</span>
+                        <span class="diff-text">Rookie</span>
+                    </button>
+                    <button class="difficulty-btn" data-difficulty="normal">
+                        <span class="diff-icon">🟡</span>
+                        <span class="diff-text">Warrior</span>
+                    </button>
+                    <button class="difficulty-btn" data-difficulty="hard">
+                        <span class="diff-icon">🟠</span>
+                        <span class="diff-text">Master</span>
+                    </button>
+                    <button class="difficulty-btn" data-difficulty="insane">
+                        <span class="diff-icon">🔴</span>
+                        <span class="diff-text">Legend</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-arena">
+            <div class="arena-glow"></div>
+            <div class="game-grid" id="gameGrid"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <div class="control-panel">
+            <button class="neo-btn primary-btn" id="startBtn">
+                <span class="btn-icon">▶️</span>
+                <span class="btn-text">Initialize</span>
+                <div class="btn-ripple"></div>
+            </button>
+            <button class="neo-btn secondary-btn" id="resetBtn">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-text">Reset</span>
+                <div class="btn-ripple"></div>
+            </button>
+            <button class="neo-btn settings-btn" id="settingsBtn">
+                <span class="btn-icon">⚙️</span>
+                <span class="btn-text">Settings</span>
+                <div class="btn-ripple"></div>
+            </button>
+        </div>
+
+        <div id="gameOverScreen" class="game-over-modal" style="display: none;">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="game-over-header">
+                    <div class="game-over-icon">🏆</div>
+                    <h2 class="game-over-title">Mission Complete!</h2>
+                </div>
+                <div class="final-stats">
+                    <div class="final-score-display">
+                        <div class="score-label">Final Score</div>
+                        <div class="final-score" id="finalScore">0</div>
+                    </div>
+                    <div class="achievement-badges" id="achievements"></div>
+                </div>
+                <div class="modal-actions">
+                    <button class="neo-btn primary-btn" id="playAgainBtn">
+                        <span class="btn-text">Play Again</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sound-controls">
+        <button class="sound-btn" id="soundToggle">
+            <span class="sound-icon">🔊</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
